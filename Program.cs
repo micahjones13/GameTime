@@ -71,6 +71,8 @@ namespace GameTime
                 {
                     Console.WriteLine($"{player.GetName()} dodged/blocked the attack!");
                 }
+                player.EndOfRound();
+                computer.EndOfRound();
 
 
 

@@ -5,6 +5,7 @@ abstract class Character
     protected int Health { get; set; } //protected = only character and a class that inehirts from it can change health
     private string Name;
     protected StatusEffect? StatusState { get; set; } //? means this is nullable. it may or may not have one
+    protected int StatusTime { get; set; }
 
     public Character(int startingHealth, string name) //, string statuseffect
     {
@@ -42,6 +43,8 @@ abstract class Character
     }
 
 
+
+
     //EndOfRound, deal with Poison effects, end effects if the duration has passed.
     //Frozen - Frozen for 2 Turns
     //Poisoned - Poisoned for 2 Turns
@@ -51,9 +54,9 @@ abstract class Character
     End of round could keep track of the number of turns since a status has been applied, and then revert status back to null after it passes.
 
     */
-    protected void EndOfRound()
+    public void EndOfRound()
     {
-        var statusTime = 0; //This will store the amount of EndOfRound calls have passed after an effect is applied. Might need to add to character fields?
+        // var statusTime = 0; //This will store the amount of EndOfRound calls have passed after an effect is applied. Might need to add to character fields?
         //*If we want the effects to last a certain amount of turns, we will need to consider what a turn is, relative to the call of endofround
         //* I think that we will need to set the condition for resetting statuseffect to + 1 of what we would think the turns would be, because it will go to 1 immediately
         if (StatusState.HasValue)
@@ -62,24 +65,31 @@ abstract class Character
             switch (StatusState)
             {
                 case StatusEffect.Frozen:
-                    statusTime++;
-                    if (statusTime == 3)
+                    StatusTime++;
+
+                    if (StatusTime == 3)
                     {
                         StatusState = null;
+                        StatusTime = 0;
+                        Console.WriteLine($"{Name} is no longer frozen!");
                     }
                     break;
                 case StatusEffect.Paralyzed:
-                    statusTime++;
-                    if (statusTime == 2)
+                    StatusTime++;
+                    if (StatusTime == 2)
                     {
                         StatusState = null;
+                        StatusTime = 0;
+                        Console.WriteLine($"{Name} is no longer paralyzed!");
                     }
                     break;
                 case StatusEffect.Poisoned:
-                    statusTime++;
-                    if (statusTime == 3)
+                    StatusTime++;
+                    if (StatusTime == 3)
                     {
                         StatusState = null;
+                        StatusTime = 0;
+                        Console.WriteLine($"{Name} is no longer poisoned!");
                     }
                     break;
                 default:
@@ -101,12 +111,6 @@ private = cannot be changed by any class other than the defining class
 protected = only defined class and any class that inheritis from it can modify field 
 readonly = cannot be changed
 void = no return value
-
-
-frozen could mean take more damage when hit while frozen
-paralyzed can't move during turn
-poisoned take additional posion damage until no longer poisoned\
-some of these may need to be put into attack or hit 
 
 
 */

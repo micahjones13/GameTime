@@ -15,6 +15,11 @@ class Archer : Character
     public override AttackResult Attack()
     {
         var attackresult = new AttackResult();
+        if (StatusState == StatusEffect.Paralyzed)
+        {
+            Console.WriteLine($"{GetName()} is paralyzed and cannot attack!");
+            return attackresult;
+        }
         var dmg = AttackDice.GetRoll();
         attackresult.AttackRoll = dmg;
         attackresult.DamageType = DamageType.Range;
