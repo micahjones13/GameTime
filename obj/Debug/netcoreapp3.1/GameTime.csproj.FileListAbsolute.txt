@@ -1,0 +1,13 @@
+C:\Users\micah\Projects\c#Practice\GameTime\bin\Debug\netcoreapp3.1\GameTime.exe
+C:\Users\micah\Projects\c#Practice\GameTime\bin\Debug\netcoreapp3.1\GameTime.deps.json
+C:\Users\micah\Projects\c#Practice\GameTime\bin\Debug\netcoreapp3.1\GameTime.runtimeconfig.json
+C:\Users\micah\Projects\c#Practice\GameTime\bin\Debug\netcoreapp3.1\GameTime.runtimeconfig.dev.json
+C:\Users\micah\Projects\c#Practice\GameTime\bin\Debug\netcoreapp3.1\GameTime.dll
+C:\Users\micah\Projects\c#Practice\GameTime\bin\Debug\netcoreapp3.1\GameTime.pdb
+C:\Users\micah\Projects\c#Practice\GameTime\obj\Debug\netcoreapp3.1\GameTime.csprojAssemblyReference.cache
+C:\Users\micah\Projects\c#Practice\GameTime\obj\Debug\netcoreapp3.1\GameTime.AssemblyInfoInputs.cache
+C:\Users\micah\Projects\c#Practice\GameTime\obj\Debug\netcoreapp3.1\GameTime.AssemblyInfo.cs
+C:\Users\micah\Projects\c#Practice\GameTime\obj\Debug\netcoreapp3.1\GameTime.csproj.CoreCompileInputs.cache
+C:\Users\micah\Projects\c#Practice\GameTime\obj\Debug\netcoreapp3.1\GameTime.dll
+C:\Users\micah\Projects\c#Practice\GameTime\obj\Debug\netcoreapp3.1\GameTime.pdb
+C:\Users\micah\Projects\c#Practice\GameTime\obj\Debug\netcoreapp3.1\GameTime.genruntimeconfig.cache

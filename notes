@@ -1,0 +1,90 @@
+Console.WriteLine("Roll the dice to see the damage you delt. Fight!");
+            //var diceNumber = 0;
+            var playerHealth = 50;
+            var computerHealth = 50;
+            /*
+            write out user health
+​
+            write out computer health
+
+            roll dice for user against computer and write out result
+​
+            then the same for the computer against the user
+
+            */
+
+            Console.WriteLine($"Your health is {playerHealth}");
+            Console.WriteLine($"Computer health is {computerHealth}");
+            Console.WriteLine($"Enter the class you want to play as: 1 - Warrior 2 - Mage");
+            var charChoice = Console.ReadLine();
+
+            var characterSelect = int.Parse(charChoice);
+            //creating player character from selection
+            Charcter player = null; // ADDED BY KEVIN - we need access to player outside of the if closure - setting it up here does that
+            if (characterSelect == 1)
+            {
+                player = new Warrior(); //create a warrior obj ADDED BY KEVIN
+                Console.WriteLine("Enter your warrior's name: ");
+                var warriorName = Console.ReadLine();
+                newWarrior.Name = warriorName;
+                //Need to figure out how to set health, either here or preferably on the warrior class 
+                Console.WriteLine("$Welcome, {warriorName}! Prepare to fight!");
+            }
+            else if (characterSelect == 2)
+            {
+                Mage newMage = new Mage();
+                Console.WriteLine("Enter your Mage's name: ");
+                var mageName = Console.ReadLine();
+                newMage.Name = mageName;
+
+                Console.WriteLine("$Welcome, {mageName}! Prepare to fight!");
+            }
+            //creating random computer opponent 
+            var rand = new Dice(2);
+
+            if (rand.GetRoll() < 1)
+            {
+
+                Warrior compWarrior = new Warrior();
+                Console.WriteLine("Your oppoent is the warrior, Dovakhin!");
+
+            }
+            else
+            {
+
+                Mage compMage = new Mage();
+                Console.WriteLine("Your opponent is the mage, Magnus!");
+            }
+
+            do
+            {
+
+                /*WIP: Need health to be defined for each class. 
+                    Have program execute attack and heal turns. 
+                    
+
+                */
+
+
+
+                // var playerRoll = dice.GetRoll();
+                // var compRoll = dice.GetRoll();
+                // Console.WriteLine($"You rolled a {playerRoll}");
+                // computerHealth = computerHealth - playerRoll;
+                // Console.WriteLine($"Computer rolled a {compRoll}");
+                // playerHealth = playerHealth - compRoll;
+                // Console.WriteLine($"Your health is now {playerHealth}");
+                // Console.WriteLine($"Computer health is now {computerHealth}");
+
+
+
+            }
+            while (playerHealth > 0 && computerHealth > 0);
+            if (computerHealth > playerHealth)
+            {
+                Console.WriteLine("Computer wins!");
+            }
+            else
+            {
+                Console.WriteLine("You win!");
+            }
