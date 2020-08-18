@@ -97,3 +97,13 @@ namespace GameTime
 }
 
 // create an attack result, which would be taken in by Hit()
+
+// Refactor some code that is being re-used. 
+// If it's on all sub-classes, it could be on character. 
+// Get it working, then refactor.
+
+/*
+Have player choose attack/heal, maybe buy weapons
+
+
+*/

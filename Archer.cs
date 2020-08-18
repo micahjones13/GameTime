@@ -6,7 +6,10 @@ class Archer : Character
     private Dice AttackDice = new Dice(6); //capitalize fields
     private Dice HealDice = new Dice(4);
 
-    public Archer(string name) : base(50, name)
+    private static int StartingHealth = 50;  //now exists for all mages
+
+
+    public Archer(string name) : base(StartingHealth, name)
     {
 
     }
@@ -36,6 +39,10 @@ class Archer : Character
     {
         var healAmount = HealDice.GetRoll();
         Health = Health + healAmount;
+        if (Health > StartingHealth)
+        {
+            Health = StartingHealth;
+        }
         return healAmount;
     }
     public override HitResult Hit(AttackResult attackresult)

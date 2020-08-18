@@ -11,7 +11,6 @@ abstract class Character
     {
         Health = startingHealth;
         Name = name;
-
     }
 
     public bool IsDead()
@@ -96,6 +95,8 @@ abstract class Character
                     return;
             }
         }
+
+        Console.WriteLine($"{Name} heals for {Heal()}!");
 
         Console.WriteLine($"{Name} has {Health} reamaining!");
 

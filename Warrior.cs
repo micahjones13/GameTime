@@ -5,8 +5,10 @@ class Warrior : Character
 
     private Dice AttackDice = new Dice(6); //capitalize fields
     private Dice HealDice = new Dice(4);
+    private static int StartingHealth = 60;  //now exists for all mages
 
-    public Warrior(string name) : base(60, name)
+
+    public Warrior(string name) : base(StartingHealth, name)
     {
 
     }
@@ -38,6 +40,10 @@ class Warrior : Character
     {
         var healAmount = HealDice.GetRoll();
         Health = Health + healAmount;
+        if (Health > StartingHealth)
+        {
+            Health = StartingHealth;
+        }
         return healAmount;
     }
     public override HitResult Hit(AttackResult attackresult)

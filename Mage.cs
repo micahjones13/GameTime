@@ -5,7 +5,9 @@ class Mage : Character
     private Dice AttackDice = new Dice(8);
     private Dice HealDice = new Dice(6);
 
-    public Mage(string name) : base(40, name)
+    private static int StartingHealth = 40;  //now exists for all mages
+
+    public Mage(string name) : base(StartingHealth, name)
     {
 
     }
@@ -35,6 +37,11 @@ class Mage : Character
     {
         var healAmount = HealDice.GetRoll();
         Health = Health + (healAmount + 2);
+        //* Refactor on character, don't hardcode 40
+        if (Health > StartingHealth)
+        {
+            Health = StartingHealth;
+        }
         return healAmount;
     }
     public override HitResult Hit(AttackResult attackresult)
