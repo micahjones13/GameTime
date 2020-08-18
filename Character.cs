@@ -90,13 +90,19 @@ abstract class Character
                         StatusTime = 0;
                         Console.WriteLine($"{Name} is no longer poisoned!");
                     }
+                    else
+                    {
+                        Health = Health - 4;
+                        Console.WriteLine($"{Name} has taken 4 poison damage!");
+                    }
                     break;
                 default:
                     return;
             }
         }
 
-        Console.WriteLine($"{Name} heals for {Heal()}!");
+
+        // Console.WriteLine($"{Name} heals for {Heal()}!");
 
         Console.WriteLine($"{Name} has {Health} reamaining!");
 
