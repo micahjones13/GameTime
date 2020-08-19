@@ -24,6 +24,7 @@ class Archer : Character
             return attackresult;
         }
         var dmg = AttackDice.GetRoll();
+        attackresult.AttackDmg = dmg;
         attackresult.AttackRoll = dmg;
         attackresult.DamageType = DamageType.Range;
 

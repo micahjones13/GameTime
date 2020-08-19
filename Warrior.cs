@@ -24,6 +24,7 @@ class Warrior : Character
         }
         var dmg = AttackDice.GetRoll();
         attackresult.AttackRoll = dmg;
+        attackresult.AttackDmg = dmg;
         attackresult.DamageType = DamageType.Melee;
         if (dmg == 6)
         {
@@ -49,7 +50,7 @@ class Warrior : Character
     public override HitResult Hit(AttackResult attackresult)
     {
         var hitresult = new HitResult();
-        var damage = attackresult.AttackRoll;
+        var damage = attackresult.AttackDmg;
         HandleStatus(attackresult); // pass that status effect to be set on character
         hitresult.ExpectedDamage = damage;
 

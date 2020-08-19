@@ -23,6 +23,7 @@ class Mage : Character
         }
         var dmg = AttackDice.GetRoll();
         attackresult.AttackRoll = dmg;
+        attackresult.AttackDmg = dmg;
         attackresult.DamageType = DamageType.Magic;
 
         if (dmg == 8)
@@ -48,7 +49,7 @@ class Mage : Character
     {
 
         var hitresult = new HitResult();
-        var damage = attackresult.AttackRoll;
+        var damage = attackresult.AttackDmg;
         HandleStatus(attackresult); // pass that status effect to be set on character
         hitresult.ExpectedDamage = attackresult.AttackRoll;
 
@@ -95,3 +96,7 @@ class Mage : Character
 
 // enums - enumeration
 // allows you to compile specific types 
+/*!
+There is a bug with mage, that on a freeze attack, it will do quadruple dmg instead of just double, and then double the next turn.
+It does the double damage from a crit, and then doubles that because the target is now frozen
+*/

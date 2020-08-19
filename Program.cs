@@ -44,52 +44,8 @@ namespace GameTime
                 computer = new Mage("Gandalf");
             }
 
-
-
-
-            do
-            {
-
-
-                var playerTurn = player.Attack();
-                var computerTurn = computer.Attack();
-
-                Console.WriteLine($"{player.GetName()} rolled a {playerTurn.AttackRoll}");
-                Console.WriteLine($"{computer.GetName()} rolled a {computerTurn.AttackRoll}");
-
-                var computerTakesHit = computer.Hit(playerTurn);
-                var playerTakesHit = player.Hit(computerTurn);
-
-                Console.WriteLine($"{computer.GetName()} took {computerTakesHit.DamageTaken}!");
-                if (computerTakesHit.DidBlock || computerTakesHit.DidDodge)
-                {
-                    Console.WriteLine($"{computer.GetName()} dodged/blocked the attack!");
-                }
-
-                Console.WriteLine($"{player.GetName()} took {playerTakesHit.DamageTaken}!");
-                if (playerTakesHit.DidBlock || playerTakesHit.DidDodge)
-                {
-                    Console.WriteLine($"{player.GetName()} dodged/blocked the attack!");
-                }
-                player.EndOfRound();
-                computer.EndOfRound();
-
-
-
-
-
-
-
-            }
-            while (!player.IsDead() && !computer.IsDead());
-            if (player.IsDead())
-            {
-                Console.WriteLine($"{player.GetName()} is dead! Computer wins!");
-            }
-            else
-            {
-                Console.WriteLine($"{computer.GetName()} is dead! Player wins!");
-            }
+            var battle = new BattleHandler();
+            battle.Battle(player, computer);
 
         }
 
